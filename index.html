@@ -7,36 +7,25 @@
     <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-<h1>Agenda de Contatos</h1>
-    <form id="contact-form">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required><br><br>    
-        <label for="phone">Telefone:</label>
-        <input type="text" id="phone" name="phone" required><br><br>
-        <button type="submit">Cadastrar</button>
-    </form>
-    <table id="contact-table">
-        <tr>
-        <th>Nome</th>
-        <th>Telefone</th>
-        </tr>
-    </table>
-    <script>
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault();
-        const name = document.getElementById("name").value;
-        const phone = document.getElementById("phone").value;
-        if (name && phone) {
-        const table = document.getElementById("contact-table");
-        const newRow = table.insertRow(table.rows.length);
-        const nameCell = newRow.insertCell(0);
-        const phoneCell = newRow.insertCell(1);
-        nameCell.innerHTML = name;
-        phoneCell.innerHTML = phone;
-        document.getElementById("name").value = "";
-        document.getElementById("phone").value = "";
-    }
-    });
-    </script>
+    <div class="container">
+        <h1>Agenda de Contatos</h1>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Nome" required>
+            <input type="tel" id="phone" placeholder="Telefone" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <table id="contact-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- As linhas de contato serão adicionadas aqui dinamicamente -->
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
